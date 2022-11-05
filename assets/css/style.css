@@ -1,0 +1,150 @@
+:root {
+  --main-page-highlight-color: rgb(203, 104, 212);
+  --main-page-button-color: rgb(0, 23, 99);
+  --main-page-offset-color: lightgray; 
+  }
+  
+body {
+  width: cal(100% - 40px);
+  height: cal(100% - 40px);
+  margin: 0px;
+  padding: 0;
+  background-color: white;
+  font-family: sans-serif, Arial, 'Comic Sans MS';
+  box-sizing: border-box;
+  }
+
+.column_1 {
+  min-width: 170px;
+  border: 1px solid var(--main-border-color-light-light-gray);
+  padding: 15px;
+  flex: 15%;
+  }
+
+.column_2 {
+  min-width: 400px;
+  border: 1px solid var(--main-border-color-light-light-gray);
+  padding: 15px;
+  flex: 80%;
+  }
+
+.column_3 {
+  min-width: 100px;
+  border: 1px solid var(--main-border-color-light-light-gray);
+  padding: 15px;
+  flex: 5%;
+  }
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  padding-top: 20px;
+  }
+  
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  padding-top: 10px;
+  }
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  padding-top: 5px;
+  }
+  
+.main_page_container {
+  width: fit-content;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 3px solid black;
+  border-radius: 3px;
+  margin: 20px;
+  }
+  
+header {
+  display: flex;
+  }
+
+.header_function_text {
+  color: var(--main-page-highlight-color);
+  }
+
+.header_function_text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  }
+  
+.section_container {
+  display: flex;
+  }
+
+.section_body {
+  min-width: 500px;
+  min-height: 300px;
+  }
+
+footer {
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: 40px;
+  }
+
+footer .column_2 {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  border-top: 4px solid var(--main-page-offset-color);
+  }
+
+.section_footer_status_text {
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--main-page-offset-color);
+  }
+  
+.button {
+  border: none;
+  background-color: var(--main-page-button-color);
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  line-height: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: left;
+  align-items: center;
+  height: 40px;
+  width: 300px;
+  cursor: pointer;
+  }
+
+.button:hover {
+  background-color: var(--main-page-highlight-color);
+  cursor: pointer;
+  }
+
+@media (max-width: 690px) {
+  .process_button {
+    font-size: 1rem;
+    margin: 16px 0px 0px 0px;
+    padding: 10px 15px;
+    }
+}
+  
+@media (max-width: 500px) {
+  .process_button {
+    font-size: 0.8rem;
+    }
+}
