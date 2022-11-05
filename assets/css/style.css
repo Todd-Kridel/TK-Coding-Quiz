@@ -140,27 +140,27 @@ footer .column_2 {
   }
 
 @media (min-width: 750px) {
-  .column_1 {
+  .column_1 {  /* size to regular-mode size for average/large screens */
     min-width: 170px;
     flex: 15%;
   }
-  .column_2 {
+  .column_2 {  /* size to regular-mode size for average/large screens */
     min-width: 400px;
     flex: 80%;
   }
-  .column_3 {
+  .column_3 {  /* size to regular-mode size for average/large screens */
     min-width: 100px;
     flex: 5%;
   }
-  header .column_1 {
+  header .column_1 {  /* size to regular-mode size for average/large screens */
     min-width: 170px;
     flex: 15%;
   }
-  header .column_2 {
+  header .column_2 {  /* size to regular-mode size for average/large screens */
     min-width: 400px;
     flex: 80%;
   }
-  header .column_3 {
+  header .column_3 {  /* size to regular-mode size for average/large screens */
     min-width: 100px;
     flex: 5%;
   }
@@ -168,32 +168,26 @@ footer .column_2 {
   
 @media (max-width: 500px) {
   .column_1 {  /* collapse the left column except for the one of the header section */
-    width: 1%;
     min-width: 1%;
     flex: 1%;
   }
   .column_2 {  /* fully expand the middle/main column except for the one of the header section */
-    width: 98%;
     min-width: 400px;
     flex: 98%;
   }
   .column_3 {  /* collapse the right column except for the one of the header section */
-    width: 1%;
     min-width: 1%;
     flex: 1%;
   }
   header .column_1 {  /* expand the left column of the header section on extra-small screens */
-    width: 69%;
     min-width: 170px;
     flex: 69%;
   }
   header .column_2 {  /* collapse the middle column of the header section on extra-small screen */
-    width: 2%;
     min-width: 2%;
     flex: 2%;
   }
   header .column_3 {  /* expand the right column of the header section on extra-small screen */
-    width: 29%;
     min-width: 100px;
     flex: 29%;
   }
