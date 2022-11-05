@@ -78,6 +78,10 @@ header {
   text-decoration: underline;
   cursor: pointer;
   }
+
+header .column_3 {
+  text-align: right;
+}
   
 .section_container {
   display: flex;
@@ -135,16 +139,62 @@ footer .column_2 {
   cursor: pointer;
   }
 
-@media (max-width: 690px) {
-  .process_button {
-    font-size: 1rem;
-    margin: 16px 0px 0px 0px;
-    padding: 10px 15px;
-    }
+@media (min-width: 750px) {
+  .column_1 {
+    min-width: 170px;
+    flex: 15%;
+  }
+  .column_2 {
+    min-width: 400px;
+    flex: 80%;
+  }
+  .column_3 {
+    min-width: 100px;
+    flex: 5%;
+  }
+  header .column_1 {
+    min-width: 170px;
+    flex: 15%;
+  }
+  header .column_2 {
+    min-width: 400px;
+    flex: 80%;
+  }
+  header .column_3 {
+    min-width: 100px;
+    flex: 5%;
+  }
 }
   
 @media (max-width: 500px) {
-  .process_button {
-    font-size: 0.8rem;
-    }
+  .column_1 {  /* collapse the left column except for the one of the header section */
+    width: 1%;
+    min-width: 1%;
+    flex: 1%;
+  }
+  .column_2 {  /* fully expand the middle/main column except for the one of the header section */
+    width: 98%;
+    min-width: 400px;
+    flex: 98%;
+  }
+  .column_3 {  /* collapse the right column except for the one of the header section */
+    width: 1%;
+    min-width: 1%;
+    flex: 1%;
+  }
+  header .column_1 {  /* expand the left column of the header section on extra-small screens */
+    width: 69%;
+    min-width: 170px;
+    flex: 69%;
+  }
+  header .column_2 {  /* collapse the middle column of the header section on extra-small screen */
+    width: 2%;
+    min-width: 2%;
+    flex: 2%;
+  }
+  header .column_3 {  /* expand the right column of the header section on extra-small screen */
+    width: 29%;
+    min-width: 100px;
+    flex: 29%;
+  }
 }
