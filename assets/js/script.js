@@ -20,16 +20,7 @@ display_quiz_introduction_screen();
 
 // Start the necessary event listener processes.
 start_quiz_button.addEventListener("click", start_countdown_timer);
-view_high_score_link.addEventListener("click", function () {
-    if (quiz_in_progress == false) {
-        view_high_score_link.style.visibility = "hidden";
-        process_high_scores();
-    }
-    else {
-        window.alert("Wait until after the quiz.");
-    }
-});
-
+//
 question_answer_1_button.addEventListener("click", function (event) {
     if (question_answer_is_selected = "false") {
         question_answer_is_selected = true;
@@ -41,7 +32,7 @@ question_answer_1_button.addEventListener("click", function (event) {
         //
     }
 });
-
+//
 question_answer_2_button.addEventListener("click", function (event) {
     if (question_answer_is_selected = "false") {
         question_answer_is_selected = true;
@@ -53,7 +44,7 @@ question_answer_2_button.addEventListener("click", function (event) {
         //
     }
 });
-
+//
 question_answer_3_button.addEventListener("click", function (event) {
     if (question_answer_is_selected = "false") {
         question_answer_is_selected = true;
@@ -65,7 +56,7 @@ question_answer_3_button.addEventListener("click", function (event) {
         //
     }
 });
-
+//
 question_answer_4_button.addEventListener("click", function (event) {
     if (question_answer_is_selected = "false") {
         question_answer_is_selected = true;
@@ -75,6 +66,16 @@ question_answer_4_button.addEventListener("click", function (event) {
     }
     else {
         //
+    }
+});
+//
+view_high_score_link.addEventListener("click", function () {
+    if (quiz_in_progress == false) {
+        view_high_score_link.style.visibility = "hidden";
+        display_high_scores();
+    }
+    else {
+        window.alert("Wait until after the quiz.");
     }
 });
 
@@ -146,10 +147,11 @@ function process_high_scores() {
     display_quiz_introduction_screen();
 }
 
-function view_high_scores() {
+function display_high_scores() {
     view_high_score_link.style.visibility = "hidden";
     question_status_text.style.visibility = "hidden";
     window.alert("Display/Load/Save high score information.");
+    view_high_score_link.style.visibility = "visible";
 }
 
 
