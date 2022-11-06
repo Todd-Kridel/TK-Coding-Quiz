@@ -14,27 +14,42 @@
 <!-- -->
 <div class="main_page_container">
     <header>
-        <div class="column_1"><span class="header_function_text">View&nbsphigh&nbspscores</span></div>
+        <div class="column_1"><span class="header_score_link">View&nbsphigh&nbspscores</span></div>
         <div class="column_2">&nbsp</div>
-        <div class="column_3">Time:&nbsp90</div>
+        <div class="column_3">Time:&nbsp<span id="timer_count"></span></div>
     </header>
-    <div class="section_container">
-        <div class="column_1">&nbsp</div>
-        <div class="column_2">
-            <h2>Question text: per a question_list array that contains per index a question_detail array that 
-                has the question text in the 1st index and then question answer text object variables in the 
-                next 4 indexes; where question.text and question.correctness are the data elements of each object</h2>
-            <div class="button">1. an answer option</div>
-            <div class="button">2. an answer option</div>
-            <div class="button">3. an answer option</div>
-            <div class="button">4. an answer option</div>
+    <div class="quiz_area_container">
+        <!-- Quiz Introduction Screen -->
+        <div id="introduction_screen" class="quiz_introduction_screen">
+            <div class="column_1">&nbsp</div>
+            <div class="column_2">
+                <h3>Coding Quiz Challenge</h3>
+                <p>Try to answer the following code-related questions within the time limit.<br/>
+                Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</p><br/> 
+                <div id="start_quiz_button" class="button">Start Quiz</div>
+            </div>
+            <div class="column_3">&nbsp</div>
         </div>
-        <div class="column_3">&nbsp</div>
+        <!-- Quiz Question Screen -->
+        <div id="quiz_question_screen" class="quiz_question_screen">
+            <div class="column_1">&nbsp</div>
+            <div class="column_2">
+                <h3>Question text: per a question_list array that contains per index a question_detail array that 
+                    has the question text in the 1st index and then question answer text object variables in the 
+                    next 4 indexes; where question.text and question.correctness are the data elements of each object</h3>
+                <div id="question_answer_1_button" class="button">1. a first answer option</div>
+                <div id="question_answer_2_button" class="button">2. a second answer option</div>
+                <div id="question_answer_3_button" class="button">3. a third answer option</div>
+                <div id="question_answer_4_button" class="button">4. and lastly a fourth answer option</div>
+            </div>
+            <div class="column_3">&nbsp</div>
+        </div>
+        <!-- -->
     </div>
     <footer>
         <div class="column_1">&nbsp</div>
         <div class="column_2">
-            <div class="section_footer_status_text">question answer status text ("Correct!" or "Wrong!")</div>
+            <div class="footer_question_status_text">TEST</div>
         </div>
         <div class="column_3">&nbsp</div>
     </footer>
