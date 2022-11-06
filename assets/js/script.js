@@ -100,10 +100,10 @@ function start_countdown_timer() {
 
 function display_quiz_introduction_screen() {
     view_high_score_link.style.visibility = "visible";
-    question_status_text.style.visibility = "visible";
+    question_status_text.style.visibility = "hidden";
     question_status_text.style.textAlign = "center";
     //question_status_text.innerHTML = "START THE QUIZ!";
-    quiz_introduction_screen.style.visibility = "hidden";
+    quiz_introduction_screen.style.visibility = "visible";
     quiz_introduction_screen.style.height = "auto";
     quiz_question_screen.style.visibility = "hidden";
     quiz_question_screen.style.height = "1px";
