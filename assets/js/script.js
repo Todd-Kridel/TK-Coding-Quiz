@@ -15,8 +15,10 @@ var question_answer_is_selected = false;
 var question_status_text = document.querySelector(".footer_question_status_text");
 var view_high_score_link = document.querySelector(".header_score_link");
 
-//
+// Display the introduction screen.
 display_quiz_introduction_screen();
+
+// Start the necessary event listener processes.
 start_quiz_button.addEventListener("click", start_countdown_timer);
 view_high_score_link.addEventListener("click", function () {
     if (quiz_in_progress == false) {
@@ -108,6 +110,7 @@ function display_quiz_introduction_screen() {
     quiz_question_screen.style.visibility = "hidden";
     quiz_question_screen.style.height = "1px";
     timer_count_display_area.innerHTML = "**";
+    quiz_in_progress = false;
 }
 
 function display_quiz_question_screen() {
@@ -133,7 +136,7 @@ function process_quiz_question_information() {
 }
 
 function process_high_scores() {
-    view_high_score_link.style.visibility = "hidden";
+    view_high_score_link.style.visibility = "visible";
     question_status_text.style.visibility = "visible";
     question_status_text.style.textAlign = "left";
     question_status_text.innerHTML = "Time is Done!";
@@ -141,6 +144,12 @@ function process_high_scores() {
     question_answer_is_selected = false;
     window.alert("Time is Done!" + "\n\n" + "Process/Display/Load/Save high score information.");
     display_quiz_introduction_screen();
+}
+
+function view_high_scores() {
+    view_high_score_link.style.visibility = "hidden";
+    question_status_text.style.visibility = "hidden";
+    window.alert("Display/Load/Save high score information.");
 }
 
 
