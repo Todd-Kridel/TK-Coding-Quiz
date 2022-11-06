@@ -15,22 +15,17 @@ body {
   }
 
 .column_1 {
-  min-width: 170px;
-  border: 1px solid var(--main-border-color-light-light-gray);
   padding: 15px;
   flex: 15%;
   }
 
 .column_2 {
-  min-width: 400px;
-  border: 1px solid var(--main-border-color-light-light-gray);
   padding: 15px;
   flex: 80%;
+  min-width: (300px + 40px);
   }
 
 .column_3 {
-  min-width: 100px;
-  border: 1px solid var(--main-border-color-light-light-gray);
   padding: 15px;
   flex: 5%;
   }
@@ -98,20 +93,17 @@ footer {
   margin-bottom: 40px;
   }
 
-footer .column_2 {
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  border-top: 4px solid var(--main-page-offset-color);
-  }
-
 .section_footer_status_text {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 10px;
+  padding-left: 10px;
   text-align: left;
   font-size: 20px;
   font-weight: bold;
   font-style: italic;
   color: var(--main-page-offset-color);
+  border-top: 4px solid var(--main-page-offset-color);
   }
   
 .button {
@@ -141,54 +133,45 @@ footer .column_2 {
 
 @media (min-width: 750px) {
   .column_1 {  /* size to regular-mode size for average/large screens */
-    min-width: 170px;
     flex: 15%;
   }
   .column_2 {  /* size to regular-mode size for average/large screens */
-    min-width: 400px;
     flex: 80%;
+    min-width: (300px + 40px);
   }
   .column_3 {  /* size to regular-mode size for average/large screens */
-    min-width: 100px;
     flex: 5%;
   }
   header .column_1 {  /* size to regular-mode size for average/large screens */
-    min-width: 170px;
     flex: 15%;
   }
   header .column_2 {  /* size to regular-mode size for average/large screens */
-    min-width: 400px;
     flex: 80%;
+    min-width: (300px + 40px);
   }
   header .column_3 {  /* size to regular-mode size for average/large screens */
-    min-width: 100px;
     flex: 5%;
   }
 }
   
 @media (max-width: 500px) {
   .column_1 {  /* collapse the left column except for the one of the header section */
-    min-width: 1%;
     flex: 1%;
   }
   .column_2 {  /* fully expand the middle/main column except for the one of the header section */
-    min-width: 400px;
     flex: 98%;
+    min-width: (300px + 40px);
   }
   .column_3 {  /* collapse the right column except for the one of the header section */
-    min-width: 1%;
     flex: 1%;
   }
   header .column_1 {  /* expand the left column of the header section on extra-small screens */
-    min-width: 170px;
     flex: 69%;
   }
   header .column_2 {  /* collapse the middle column of the header section on extra-small screen */
-    min-width: 2%;
     flex: 2%;
-  }
+    min-width: 2%;  }
   header .column_3 {  /* expand the right column of the header section on extra-small screen */
-    min-width: 100px;
     flex: 29%;
   }
 }
