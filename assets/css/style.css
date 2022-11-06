@@ -1,7 +1,7 @@
 :root {
   --main-page-highlight-color: rgb(203, 104, 212);
   --main-page-button-color: rgb(0, 23, 99);
-  --main-page-offset-color: lightgray; 
+  --main-page-offset-color: rgb(192, 191, 191); 
   }
   
 body {
@@ -18,7 +18,7 @@ body {
 .column_1 {
   padding: 13px;
   flex: 14%;
-  border: 1px dashed lightgray;
+  /* border: 1px dashed lightgray; */
   }
 
 .column_2 {
@@ -28,13 +28,13 @@ body {
   padding-right: 50px;
   flex: 80%;
   min-width: (300px + 40px);
-  border: 1px dashed lightgray;
+  /* border: 1px dashed lightgray; */
   }
 
 .column_3 {
   padding: 13px;
   flex: 6%;
-  border: 1px dashed lightgray;
+  /* border: 1px dashed lightgray; */
   }
 
 h1 {
@@ -106,7 +106,7 @@ header .column_3 {
 .quiz_introduction_screen .column_2 {
   text-align: center;
   padding-bottom: 30px;
-  border: 1px dashed lightgray;
+  /* border: 1px dashed lightgray; */
   }
 
 .quiz_question_screen {
@@ -127,7 +127,6 @@ footer {
   flex-direction: row;
   margin-top: 0px;
   margin-bottom: 40px;
-  /* visibility: hidden; */
   height: auto;
   }
 
@@ -213,9 +212,3 @@ footer {
   }
 }
 
-
-/* 
-
-  background-color: rgba(255, 166, 0, 0.699);
-
-*/
