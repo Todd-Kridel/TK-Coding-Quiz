@@ -109,7 +109,9 @@ header .column_3 {
   /* border: 1px dashed lightgray; */
   }
 
-.quiz_question_screen {
+.quiz_question_screen, 
+.completion_screen, 
+.high_scores_screen {
   display: flex;
   flex-direction: row;
   visibility: hidden;
@@ -117,6 +119,13 @@ header .column_3 {
   }
 
 .quiz_question_screen .column_2 {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  }
+
+.completion_screen .column_2, 
+.high_scores_screen .column_2 {
   display: flex;
   flex-direction: column;
   text-align: left;
