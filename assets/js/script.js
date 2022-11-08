@@ -351,11 +351,6 @@ function display_quiz_question_screen() {
             }
         }
     };
-    //DELETE
-    //else {
-        // The quiz is done.
-        //process_high_scores();
-    //};
 //
 // a test algorithm to display some sample answer-processing data; and for building the
 // question information screen; and for using index information with the button events
