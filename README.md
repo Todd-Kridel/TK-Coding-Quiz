@@ -51,6 +51,10 @@ The following pictures show the appearance of some of the completed application:
 ![an example view of the appearance of the webpage](assets/images/Quiz%20Mockup%201.jpg)
 ![an example view of the appearance of the webpage](assets/images/Quiz%20Mockup%202.jpg)
 
+The completed submitted assignment was reverse-engineered from (an imitation of) the following example mockup images:
+
+![an example view of the appearance of the webpage](assets/images/Module%204%20Example%20Mockup.jpg)
+
 The following URL is for the GitHub Pages published public view of Todd Kridel's Coding Bootcamp Module 4 Challenge assignment quiz application webpage: "https://todd-kridel.github.io/TK-Coding-Quiz/".
 
 ## Credits
