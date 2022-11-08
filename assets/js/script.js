@@ -28,7 +28,7 @@ var high_scores_history_field = document.querySelector("#high_scores_history_fie
 var high_scores_local_storage_record_amount = 0;
 var go_back_button = document.querySelector("#go_back_button");
 var clear_scores_button = document.querySelector("#clear_scores_button");
-
+// ( More global variables are at below. )
 ///////////////////////////////////////////////////////////////////////////////////////
 //
 // Answer Processing; Store the answer information in a multi-dimensional array of
@@ -100,10 +100,10 @@ var question_object_list_array =
         // with the 1-to-4 sequence numbers of the components corresponding to the 4 answer 
         // buttons of the question screen (indexes 0 through 3)
         [
-        {possible_answer: /* #1 */ "strings", correctness: false}, 
-        {possible_answer: /* #2 */ "booleans", correctness: false}, 
-        {possible_answer: /* #3 */ "alerts", correctness: true}, 
-        {possible_answer: /* #4 */ "numbers", correctness: false}
+        {possible_answer: /* #1 */ "1. strings", correctness: false}, 
+        {possible_answer: /* #2 */ "2. booleans", correctness: false}, 
+        {possible_answer: /* #3 */ "3. alerts", correctness: true}, 
+        {possible_answer: /* #4 */ "4. numbers", correctness: false}
         ]
     }, 
     // the 2nd question; index/element 1 of the outer array
@@ -113,10 +113,10 @@ var question_object_list_array =
         // with the 1-to-4 sequence numbers of the components corresponding to the 4 answer 
         // buttons of the question screen (indexes 0 through 3)
         [
-        {possible_answer: /* #1 */ "quotes", correctness: false}, 
-        {possible_answer: /* #2 */ "curly brackets", correctness: false}, 
-        {possible_answer: /* #3 */ "parenthesis", correctness: true}, 
-        {possible_answer: /* #4 */ "square brackets", correctness: false}
+        {possible_answer: /* #1 */ "1. quotes", correctness: false}, 
+        {possible_answer: /* #2 */ "2. curly brackets", correctness: false}, 
+        {possible_answer: /* #3 */ "3. parenthesis", correctness: true}, 
+        {possible_answer: /* #4 */ "4. square brackets", correctness: false}
         ]
     }, 
     // the 3rd question; index/element 2 of the outer array
@@ -126,10 +126,10 @@ var question_object_list_array =
         // with the 1-to-4 sequence numbers of the components corresponding to the 4 answer 
         // buttons of the question screen (indexes 0 through 3)
         [
-        {possible_answer: /* #1 */ "numbers and strings", correctness: false}, 
-        {possible_answer: /* #2 */ "other arrays", correctness: false}, 
-        {possible_answer: /* #3 */ "booleans", correctness: false}, 
-        {possible_answer: /* #4 */ "all of the above", correctness: true}
+        {possible_answer: /* #1 */ "1. numbers and strings", correctness: false}, 
+        {possible_answer: /* #2 */ "2. other arrays", correctness: false}, 
+        {possible_answer: /* #3 */ "3. booleans", correctness: false}, 
+        {possible_answer: /* #4 */ "4. all of the above", correctness: true}
         ]
     }, 
     // the 4th question; index/element 3 of the outer array
@@ -139,10 +139,10 @@ var question_object_list_array =
         // with the 1-to-4 sequence numbers of the components corresponding to the 4 answer 
         // buttons of the question screen (indexes 0 through 3)
         [
-        {possible_answer: /* #1 */ "commas", correctness: false}, 
-        {possible_answer: /* #2 */ "curly brackets", correctness: false}, 
-        {possible_answer: /* #3 */ "quotes", correctness: true}, 
-        {possible_answer: /* #4 */ "parenthesis", correctness: false}
+        {possible_answer: /* #1 */ "1. commas", correctness: false}, 
+        {possible_answer: /* #2 */ "2. curly brackets", correctness: false}, 
+        {possible_answer: /* #3 */ "3. quotes", correctness: true}, 
+        {possible_answer: /* #4 */ "4. parenthesis", correctness: false}
         ]
     }, 
     // the 5th question; index/element 4 of the outer array
@@ -152,10 +152,10 @@ var question_object_list_array =
         // with the 1-to-4 sequence numbers of the components corresponding to the 4 answer 
         // buttons of the question screen (indexes 0 through 3)
         [
-        {possible_answer: /* #1 */ "JavaScript", correctness: false}, 
-        {possible_answer: /* #2 */ "terminal/bash", correctness: false}, 
-        {possible_answer: /* #3 */ "for loops", correctness: false}, 
-        {possible_answer: /* #4 */ "console.log", correctness: true}
+        {possible_answer: /* #1 */ "1. JavaScript", correctness: false}, 
+        {possible_answer: /* #2 */ "2. terminal/bash", correctness: false}, 
+        {possible_answer: /* #3 */ "3. for loops", correctness: false}, 
+        {possible_answer: /* #4 */ "4. console.log", correctness: true}
         ]
     }
     ];
@@ -176,24 +176,26 @@ display_quiz_introduction_screen();
 //
 //
 //
-
+start_quiz_button.addEventListener("click", function() {
+    if (quiz_in_progress == false) {
+        current_question_number = 0;
+        timer_count_current_value = 0;
+        timer_count_display_area.innerHTML = timer_count_current_value;
+        time_score_of_last_answer = 0;
+        question_answer_is_selected = false;
+        start_countdown_timer();
+    }
+    // (maybe no if?)
+    // current_question_number = 0;
+    // timer_count_current_value = 0;
+    // timer_count_display_area.innerHTML = timer_count_current_value;
+    // time_score_of_last_answer = 0;
+    // start_countdown_timer();
+});
 
 // Start the necessary event listener processes; and process in the answer information array structure.
 //
 // answer button #1; index 0
-start_quiz_button.addEventListener("click", function() {
-    timer_count_current_value = 0;
-    timer_count_display_area.innerHTML = timer_count_current_value;
-    time_score_of_last_answer = 0;
-    start_countdown_timer();
-    // if (quiz_in_progress == false) {
-    //     timer_count_current_value = 0;
-    //     timer_count_display_area.innerHTML = timer_count_current_value;
-    //     time_score_of_last_answer = 0;
-    //     start_countdown_timer();
-    // }
-});
-//
 question_answer_1_button.addEventListener("click", function(event) {
     if (question_answer_is_selected == false) {
         question_answer_is_selected = true;
@@ -243,13 +245,26 @@ question_answer_4_button.addEventListener("click", function(event) {
 });
 //
 view_high_score_link.addEventListener("click", function() {
-    if (quiz_in_progress == false) {
-        view_high_score_link.style.visibility = "hidden";
-        display_high_scores_screen();
-    }
-    else {
-        window.alert("Wait until after the quiz.");
-    }
+    clearInterval(timer_countdown_interval);
+    quiz_in_progress = "false";
+    question_answer_is_selected = false;
+    timer_count_display_area.innerHTML = "**";
+    view_high_score_link.style.visibility = "hidden";
+    display_high_scores_screen();
+    window.alert("Note:" + "\n" + 
+        "\n" + 
+        "This action cancelled the current quiz if one was in-progress." + "\n" + 
+        "\n" + 
+        "You can start a new quiz by clicking the \"Go back\" button at after when you view the high scores screen.");
+    //
+    // (another option because viewing high scores during the timed quiz seems silly)
+    // if (quiz_in_progress == false) {
+    //     view_high_score_link.style.visibility = "hidden";
+    //     display_high_scores_screen();
+    // }
+    // else {
+    //     window.alert("Wait until after the quiz.");
+    // }
 });
 //
 save_score_button.addEventListener("click", save_score);
@@ -261,7 +276,7 @@ clear_scores_button.addEventListener("click", clear_high_scores);
 
 function start_countdown_timer() {
     if (quiz_in_progress == false) {
-        timer_count_current_value = 30;
+        timer_count_current_value = 90;
         quiz_in_progress = true;
         display_quiz_question_screen();
         // Set the timer interval variable.
