@@ -34,13 +34,11 @@
         <div id="quiz_question_screen" class="quiz_question_screen">
             <div class="column_1">&nbsp</div>
             <div class="column_2">
-                <h3>Question text: per a question_list array that contains per index a question_detail array that 
-                    has the question text in the 1st index and then question answer text object variables in the 
-                    next 4 indexes; where question.text and question.correctness are the data elements of each object</h3>
-                <div id="question_answer_1_button" class="button">1. a first answer option</div>
-                <div id="question_answer_2_button" class="button">2. a second answer option</div>
-                <div id="question_answer_3_button" class="button">3. a third answer option</div>
-                <div id="question_answer_4_button" class="button">4. and lastly a fourth answer option</div>
+                <h3 id="question_text"></h3>
+                <div id="question_answer_1_button" class="button"></div>
+                <div id="question_answer_2_button" class="button"></div>
+                <div id="question_answer_3_button" class="button"></div>
+                <div id="question_answer_4_button" class="button"></div>
             </div>
             <div class="column_3">&nbsp</div>
         </div>
@@ -49,9 +47,11 @@
             <div class="column_1">&nbsp</div>
             <div class="column_2">
                 <h3>All done!</h3>
-                <p>Your final score (remaining time) is <input type="text" id="final_score" name="final_score" readonly="readonly" value="0" size="2">.</p>
-                <label for="initials_entry_field">Enter Initials:</label><input type="text" id="initials_entry_field" name="initials_entry_field">
-                <div id="save_score_button" class="button">&nbspSubmit&nbsp</div>
+                <p>Your final score (remaining time) is <input type="text" id="final_score" name="final_score" readonly="readonly">.</p>
+                <div id="completion_screen_button_row">
+                    <label for="initials_entry_field">Enter Initials:&nbsp&nbsp</label><input type="text" id="initials_entry_field" name="initials_entry_field" size="3">&nbsp&nbsp
+                    <div id="save_score_button" class="button">&nbspSubmit&nbsp</div>
+                </div>
             </div>
             <div class="column_3">&nbsp</div>
         </div>
@@ -60,10 +60,12 @@
             <div class="column_1">&nbsp</div>
             <div class="column_2">
                 <h3>High scores</h3>
-                <div id="high_scores_saved"><input type="text" id="high_scores_history_field" name="high_scores_history_field" readonly="readonly" value="NONE YET" size="100"></div>
+                <div id="high_scores_saved"><textarea readonly="readonly" id="high_scores_history_field" name="high_scores_history_field" 
+                    readonly="readonly" placeholder="NONE YET" aria-label="area for saved high scores"></textarea></div>
                 <br/>
-                <br/>
-                <div id="go_back_button" class="button">&nbspGo back&nbsp</div>&nbsp<div id="clear_scores_button" class="button">&nbspClear high scores&nbsp</div>
+                <div id="high_scores_screen_button_row">
+                    <div id="go_back_button" class="button" alt="Go back to the quiz-start screen.">&nbspGo back&nbsp</div>&nbsp<div id="clear_scores_button" class="button">&nbspClear high scores&nbsp</div>
+                </div>
             </div>
             <div class="column_3">&nbsp</div>
         </div>
