@@ -183,6 +183,7 @@ start_quiz_button.addEventListener("click", function() {
         timer_count_display_area.innerHTML = timer_count_current_value;
         time_score_of_last_answer = 0;
         question_answer_is_selected = false;
+        question_status_text.innerHTML = "";
         start_countdown_timer();
     }
     // (maybe no if?)
@@ -318,10 +319,7 @@ function display_quiz_introduction_screen() {
 ///////////////////////////////////////////////////////////////////////////////////////
 // Display -- dynamically build and process -- the question screen of the current question (if any). 
 function display_quiz_question_screen() {
-    if (current_question_number >= total_possible_questions) {
-        question_answer_is_selected = true;
-    }
-    else {
+    if (current_question_number < total_possible_questions) {
         current_question_number = current_question_number + 1;
         quiz_introduction_screen.style.visibility = "hidden";
         quiz_introduction_screen.style.height = "1px";
@@ -329,9 +327,6 @@ function display_quiz_question_screen() {
         quiz_question_screen.style.height = "auto";
         question_status_text.style.visibility = "visible";
         question_status_text.style.textAlign = "left";
-        if (current_question_number > 1) {
-            question_status_text.innerHTML = question_status_text.innerHTML + "&nbsp&nbsp(previous answer)";
-        }
         question_answer_is_selected = false;
         //
         var current_question_button_text = ""
@@ -356,6 +351,11 @@ function display_quiz_question_screen() {
             }
         }
     };
+    //DELETE
+    //else {
+        // The quiz is done.
+        //process_high_scores();
+    //};
 //
 // a test algorithm to display some sample answer-processing data; and for building the
 // question information screen; and for using index information with the button events
@@ -423,8 +423,10 @@ function process_quiz_question_information(passed_answer_button_index_number) {
         // Acceptance Criteria: "Keep in mind that incorrect answers will penalize the user's score/time by 10 seconds!"
         timer_count_current_value = timer_count_current_value - 10;
     }
+    if (current_question_number > 1) {
+        question_status_text.innerHTML = question_status_text.innerHTML + "&nbsp&nbsp(previous answer)";
+    }
     //
-    question_answer_is_selected = true;
     if (current_question_number < total_possible_questions) {  // The quiz is not done.;
         display_quiz_question_screen();
     } 
@@ -440,12 +442,16 @@ function process_quiz_question_information(passed_answer_button_index_number) {
 }
 
 function process_high_scores() { 
-    var user_save_response = window.prompt("The Quiz is done or the Time is done (perhaps because of wrong-answer time decreases)!" + "\n\n" + 
-        "If you want to save your score with your name initials...enter the initials and click 'OK'; Otherwise click 'Cancel' to exit.");
+    var user_save_response = window.prompt("**** The Quiz is done! ****" + "\n" + 
+    "\n" + 
+    "All of the questions were answered or the timer expired (perhaps because of wrong-answer time decreases)." + "\n" + 
+    "\n" + 
+    "If you want to save your score with your name initials...enter the initials and click 'OK'; " + 
+    "Otherwise click 'Cancel' to return to the introduction screen. " + 
+    "Note: The answer status of the last question that was answered will be displayed on the save-score screen.");
     view_high_score_link.style.visibility = "visible";
     question_status_text.style.visibility = "visible";
     question_status_text.style.textAlign = "left";
-    question_status_text.innerHTML = "";
     quiz_introduction_screen.style.visibility = "hidden";
     quiz_introduction_screen.style.height = "1px";
     quiz_question_screen.style.visibility = "hidden";
