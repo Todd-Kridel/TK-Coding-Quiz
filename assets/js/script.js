@@ -478,7 +478,7 @@ function load_high_scores_information() {
         load_data_loop_index = load_data_loop_index + 1) {
         if (localStorage.key(load_data_loop_index).indexOf("BCCQ-SCORE_") == 0) {
             // a unique key-indexing value that can be removed but it excludes all other local storage data that is not quiz-related.
-        loaded_storage_data_record = (localStorage.key(load_data_loop_index).substring(11));
+        var loaded_storage_data_record = (localStorage.key(load_data_loop_index).substring(11));
             // 11 is the 1st index that is at after the to-be-removed unique key-indexing exclusion value.
         loaded_storage_data_record = loaded_storage_data_record + " : " + 
             localStorage.getItem(localStorage.key(load_data_loop_index));
